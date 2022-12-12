@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BackGround : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private MeshRenderer meshRenderer;
+    public float animationspeed = 0.7f;
+    private void Awake()
     {
-        
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        meshRenderer.material.mainTextureOffset += new Vector2(animationspeed * Time.deltaTime, 0);
     }
 }
